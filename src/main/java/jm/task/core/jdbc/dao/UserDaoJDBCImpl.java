@@ -74,10 +74,12 @@ public class UserDaoJDBCImpl implements UserDao {
 
             ps.setLong(1, id);
 
-            int rows = ps.executeUpdate(); // пробуем выполнить sql запрос если да то получим 1 если нет 0
+            int rows = ps.executeUpdate();
 
             if (rows == 0) {
-                System.out.println("User c таким id не найден!");
+                System.out.println("User с таким id не найден!");
+            } else {
+                System.out.println("User: ID " + id + " удалён!");
             }
 
         } catch (SQLException e) {
