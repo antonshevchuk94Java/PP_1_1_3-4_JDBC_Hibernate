@@ -13,15 +13,10 @@ public class Main {
         userService.saveUser("Jon","Week",(byte) 37 );
         userService.saveUser("Bob","Silent",(byte) 27 );
         userService.saveUser("Tony","Soprano",(byte) 21);
-        for (User user : userService.getAllUsers()){
-            System.out.println(user);
-        }
+        userService.getAllUsers().forEach(System.out::println);
         userService.removeUserById(11);
         userService.cleanUsersTable();
         userService.dropUsersTable();
-
-
-
         }
 
     }
