@@ -5,8 +5,6 @@ import jm.task.core.jdbc.util.Util;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
-import java.sql.SQLException;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -99,7 +97,8 @@ public class UserDaoHibernateImpl implements UserDao {
         }
 
     @Override
-    public void cleanUsersTable() {      try (Session session = sessionFactory.openSession()) { // открываем ресурс (сессию)
+    public void cleanUsersTable() {
+        try (Session session = sessionFactory.openSession()) { // открываем ресурс (сессию)
         Transaction transaction = session.beginTransaction(); // начинаем транзакцию
         try {
             session.createNativeQuery("DELETE FROM users").executeUpdate();
