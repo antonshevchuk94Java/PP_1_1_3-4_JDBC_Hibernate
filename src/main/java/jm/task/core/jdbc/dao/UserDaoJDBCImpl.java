@@ -7,9 +7,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mysql.cj.xdevapi.Type.BIGINT;
-import static java.sql.JDBCType.TINYINT;
-
 public class UserDaoJDBCImpl implements UserDao {
     private Util util = new Util(); // создаем обьект для работы с бд
     public UserDaoJDBCImpl() {

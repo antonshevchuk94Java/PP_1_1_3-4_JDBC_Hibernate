@@ -28,13 +28,6 @@ public class User {
         this.lastName = lastName;
         this.age = age;
     }
-    @Override
-    public String toString() {
-        return "id: " + getId()
-                + "; Name: " + getName()
-                + "; Last Name: " + getLastName()
-                + "; Age: " + getAge();
-    }
 
     public Long getId() {
         return id;
@@ -67,4 +60,13 @@ public class User {
     public void setAge(Byte age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "id: " + getId()
+                + "; Name: " + getName()
+                + "; Last Name: " + getLastName()
+                + "; Age: " + getAge();
+    }
+
 }
