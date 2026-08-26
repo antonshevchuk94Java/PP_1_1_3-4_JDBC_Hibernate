@@ -70,9 +70,11 @@ public class UserDaoHibernateImpl implements UserDao {
             Transaction transaction = session.beginTransaction(); // начинаем транзакцию
             try {
                 User user = session.get(User.class, id);
+                if (user != null){
                 session.delete(user);
-
-                transaction.commit(); // фиксируем транзакцию
+                transaction.commit();
+                } // фиксируем транзакцию
+                System.out.println("User с  id: " + id + " не найден.");
             } catch (Exception e) {
                 transaction.rollback(); // откатываем при ошибки выполнения запроса
                 e.printStackTrace(); // выводи информацию об ошибки
